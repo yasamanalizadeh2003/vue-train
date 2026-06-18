@@ -42,3 +42,30 @@ npm run build
 ```sh
 npm run lint
 ```
+# Vue 3 Practice Project
+
+This repository is a personal learning space for practicing Vue 3 concepts.
+
+## 📚 What I'm currently learning
+
+- Composition API (ref, reactive)
+- Components and props
+- v-model, v-if, v-for
+- computed properties
+- watch and watchEffect
+- Form handling
+- Basic CRUD operations
+- Composables (custom hooks like useCounter)
+
+## 🚧 Project status
+
+This project is continuously updated as I learn new concepts in Vue 3.  
+More features and improvements will be added over time.
+
+## 🎯 Goal
+
+The goal of this repository is to strengthen my Vue.js fundamentals and build real-world development skills.
+
+---
+
+⭐ More updates coming soon as I continue learning.
