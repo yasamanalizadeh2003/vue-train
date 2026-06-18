@@ -150,7 +150,7 @@ function deleteUser(id) {
   </div>
 </template> -->
 
-<script setup>
+<!-- <script setup>
 import { computed, reactive ,watch, watchEffect} from 'vue'
 
 const numbers = reactive([1, 2, 3, 4, 5, 6, 7, 8])
@@ -177,4 +177,16 @@ watchEffect(()=>{
   <h1>Numbers:{{ numbers }}</h1>
   <h1>sum is {{ sumEvenNumbers }}</h1>
   <button @click="numbers.push(numbers.length + 1)">click to add number</button>
+</template> -->
+
+<script setup>
+import useCounter from './usecounter'
+
+const { count, increase, decrease } = useCounter()
+</script>
+
+<template>
+  <p>{{ count }}</p>
+  <button @click="increase">increase</button>
+  <button @click="decrease">decrease</button>
 </template>
