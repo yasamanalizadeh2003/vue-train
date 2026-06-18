@@ -86,9 +86,9 @@ function addUser() {
   email.value = ''
 }
 
-function deleteUser(id){
-const index=users.findIndex(user=>user.id===id)
-users.splice(index,1)
+function deleteUser(id) {
+  const index = users.findIndex((user) => user.id === id)
+  users.splice(index, 1)
 }
 </script>
 
@@ -96,48 +96,54 @@ users.splice(index,1)
   <div class="flex justify-center">
     <div class="bg-gray-50 flex flex-col w-98 h-min mt-32 rounded-2xl shadow-lg shadow-gray-200">
       <h1 class="text-gray-700 text-4xl p-4 self-center mt-7">User Form</h1>
-      <!-- name entry -->
-      <div class="flex flex-col mx-4 gap-1">
-        <label for="name" class="font-bold">Name:</label>
-        <input
-          id="name"
-          type="text"
-          placeholder="Enter your name"
-          v-model="name"
-          class="bg-white border-2 border-gray-200 rounded-sm p-1"
-        />
-      </div>
-      <!-- email entry -->
-      <div class="flex flex-col mx-4 gap-1 mt-5">
-        <label for="email" class="font-bold">Email:</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="Enter your email"
-          v-model="email"
-          class="bg-white border-2 border-gray-200 rounded-sm p-1"
-        />
-      </div>
-      <!-- if button -->
-      <p v-if="name.length == 0 || email.length == 0" class="text-gray-500 ml-4 mt-3">
-        please fill in both fields
-      </p>
-      <button
-        v-else
-        @click="addUser"
-        class="bg-green-700 text-white h-8 w-18 rounded-xl ml-4 mt-3 hover:bg-green-800 transition"
-      >
-        save
-      </button>
+      <form @submit.prevent="addUser">
+        <!-- name entry -->
+        <div class="flex flex-col mx-4 gap-1">
+          <label for="name" class="font-bold">Name:</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            v-model="name"
+            class="bg-white border-2 border-gray-200 rounded-sm p-1 outline-0 hover:border-gray-300 focus:border-gray-400 transition"
+          />
+        </div>
+        <!-- email entry -->
+        <div class="flex flex-col mx-4 gap-1 mt-5">
+          <label for="email" class="font-bold">Email:</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            v-model="email"
+            class="bg-white border-2 border-gray-200 rounded-sm p-1 outline-0 hover:border-gray-300 focus:border-gray-400 transition"
+          />
+        </div>
+        <!-- if button -->
+        <p v-if="name.length == 0 || email.length == 0" class="text-gray-500 ml-4 mt-3">
+          please fill in both fields
+        </p>
+        <button
+          type="submit"
+          v-else
+          class="bg-green-700 text-white h-8 w-18 rounded-xl ml-4 mt-3 hover:bg-green-800 transition"
+        >
+          save
+        </button>
+      </form>
 
       <!-- user list -->
       <h1 class="text-gray-700 text-3xl p-4 self-center mt-3">User list</h1>
+      <p class="text-gray-600 ml-3 mb-2" v-if="users.length == 0">there is no user yet.</p>
       <ul>
         <li v-for="user in users" :key="user.id" class="flex justify-between py-5 px-7">
-          <div class="text-gray-600">
-            {{ user.fullName }} - {{ user.email }}
-          </div>
-          <button @click="deleteUser(user.id)" class="bg-red-500 text-white rounded-sm px-2 py-1 hover:bg-red-600 transition">Delete</button>
+          <div class="text-gray-600">{{ user.fullName }} - {{ user.email }}</div>
+          <button
+            @click="deleteUser(user.id)"
+            class="bg-red-500 text-white rounded-sm px-2 py-1 hover:bg-red-600 transition"
+          >
+            Delete
+          </button>
         </li>
       </ul>
     </div>
