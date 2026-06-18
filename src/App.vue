@@ -66,7 +66,7 @@ function decrease(num){
 
 </template> -->
 
-<script setup>
+<!-- <script setup>
 import { reactive, ref } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -97,7 +97,7 @@ function deleteUser(id) {
     <div class="bg-gray-50 flex flex-col w-98 h-min mt-32 rounded-2xl shadow-lg shadow-gray-200">
       <h1 class="text-gray-700 text-4xl p-4 self-center mt-7">User Form</h1>
       <form @submit.prevent="addUser">
-        <!-- name entry -->
+       
         <div class="flex flex-col mx-4 gap-1">
           <label for="name" class="font-bold">Name:</label>
           <input
@@ -108,7 +108,7 @@ function deleteUser(id) {
             class="bg-white border-2 border-gray-200 rounded-sm p-1 outline-0 hover:border-gray-300 focus:border-gray-400 transition"
           />
         </div>
-        <!-- email entry -->
+      
         <div class="flex flex-col mx-4 gap-1 mt-5">
           <label for="email" class="font-bold">Email:</label>
           <input
@@ -119,7 +119,7 @@ function deleteUser(id) {
             class="bg-white border-2 border-gray-200 rounded-sm p-1 outline-0 hover:border-gray-300 focus:border-gray-400 transition"
           />
         </div>
-        <!-- if button -->
+     
         <p v-if="name.length == 0 || email.length == 0" class="text-gray-500 ml-4 mt-3">
           please fill in both fields
         </p>
@@ -132,7 +132,7 @@ function deleteUser(id) {
         </button>
       </form>
 
-      <!-- user list -->
+     
       <h1 class="text-gray-700 text-3xl p-4 self-center mt-3">User list</h1>
       <p class="text-gray-600 ml-3 mb-2" v-if="users.length == 0">there is no user yet.</p>
       <ul>
@@ -148,4 +148,33 @@ function deleteUser(id) {
       </ul>
     </div>
   </div>
+</template> -->
+
+<script setup>
+import { computed, reactive ,watch, watchEffect} from 'vue'
+
+const numbers = reactive([1, 2, 3, 4, 5, 6, 7, 8])
+
+const sumEvenNumbers = computed(() => {
+  let sum = 0
+  numbers.forEach((n) => {
+    if (n % 2 == 0) {
+      sum = sum + n
+    }
+  })
+  return sum
+})
+
+watch(numbers,(oldValue,newValue)=>{
+  console.log(`array is ${newValue}`)
+})
+watchEffect(()=>{
+    console.log(`array is ${numbers}`)
+})
+</script>
+
+<template>
+  <h1>Numbers:{{ numbers }}</h1>
+  <h1>sum is {{ sumEvenNumbers }}</h1>
+  <button @click="numbers.push(numbers.length + 1)">click to add number</button>
 </template>
