@@ -179,7 +179,7 @@ watchEffect(()=>{
   <button @click="numbers.push(numbers.length + 1)">click to add number</button>
 </template> -->
 
-<script setup>
+<!-- <script setup>
 import useCounter from './usecounter'
 
 const { count, increase, decrease } = useCounter()
@@ -190,4 +190,13 @@ const { count, increase, decrease } = useCounter()
   <button class="bg-green-600 shadow-sm shadow-green-800 text-white hover:bg-green-700 transition p-2 rounded-2xl mx-3 mt-2" @click="increase">increase</button>
   <button class="bg-red-600 shadow-sm shadow-red-800 text-white hover:bg-red-700 transition p-2 rounded-2xl mx-3 mt-2" @click="decrease">decrease</button>
    <p class="font-serif my-3 ml-19 text-gray-800 bg-gray-50 w-10 text-center rounded-2xl p-2">{{ count }}</p>
+</template> -->
+
+<template>
+<Parent/>
 </template>
+
+<script setup>
+import Parent from './parent.vue';
+
+</script>
