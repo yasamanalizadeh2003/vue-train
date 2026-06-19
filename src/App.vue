@@ -193,10 +193,10 @@ const { count, increase, decrease } = useCounter()
 </template> -->
 
 <template>
-<Parent/>
+<ParentComponent/>
 </template>
 
 <script setup>
-import Parent from './parent.vue';
+import ParentComponent from './ParentComponent.vue';
 
 </script>
