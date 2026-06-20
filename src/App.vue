@@ -1,5 +1,6 @@
 
 
+
 <!-- <script setup>
 import { reactive, ref } from 'vue';
 
@@ -203,7 +204,7 @@ import ParentComponent from './ParentComponent.vue';
 
 </script> -->
 
-<template>
+<!-- <template>
  <CardBox>
  <template #header>
    <h1 class="text-center text-gray-600 font-semibold text-2xl mt-3">{{ header }}</h1>
@@ -219,4 +220,14 @@ import { ref } from 'vue';
 import CardBox from './CardBox.vue';
 
 const header=ref("cardbox")
+</script> -->
+
+<template>
+  <ParentComponent/>
+</template>
+
+<script setup>
+import ParentComponent from './ParentComponent.vue';
+
+
 </script>

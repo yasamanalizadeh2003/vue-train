@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 import ChildComponent from './ChildComponent.vue';
 
 const message = ref('message from parent')
+const counter=ref(0)
+provide("counter",counter)
 
 function handleChange(newData) {
   message.value = newData
