@@ -1,3 +1,5 @@
+
+
 <!-- <script setup>
 import { reactive, ref } from 'vue';
 
@@ -192,11 +194,29 @@ const { count, increase, decrease } = useCounter()
    <p class="font-serif my-3 ml-19 text-gray-800 bg-gray-50 w-10 text-center rounded-2xl p-2">{{ count }}</p>
 </template> -->
 
-<template>
+<!-- <template>
 <ParentComponent/>
 </template>
 
 <script setup>
 import ParentComponent from './ParentComponent.vue';
 
+</script> -->
+
+<template>
+ <CardBox>
+ <template #header>
+   <h1 class="text-center text-gray-600 font-semibold text-2xl mt-3">{{ header }}</h1>
+   <p class="text-gray-500 mt-3 mx-3">Lorem ipsum dolor sit amet, consectetur
+     adipisicing elit. Ea praesentium blanditiis quis dicta illum ipsa necessitatibus reprehenderit,
+     hic corrupti sunt nobis recusandae ipsam, iste consequuntur vitae molestias, impedit accusamus voluptates?</p>
+ </template>
+ </CardBox>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import CardBox from './CardBox.vue';
+
+const header=ref("cardbox")
 </script>
