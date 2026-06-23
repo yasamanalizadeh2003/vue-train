@@ -222,12 +222,22 @@ import CardBox from './CardBox.vue';
 const header=ref("cardbox")
 </script> -->
 
-<template>
+<!-- <template>
   <ParentComponent/>
 </template>
 
 <script setup>
 import ParentComponent from './ParentComponent.vue';
+
+
+</script> -->
+
+<template>
+  <router-link to="/parent">Parent Component</router-link>
+  <router-view></router-view>
+</template>
+
+<script setup>
 
 
 </script>
