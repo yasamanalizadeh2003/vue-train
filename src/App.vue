@@ -232,7 +232,7 @@ import ParentComponent from './ParentComponent.vue';
 
 </script> -->
 
-<template>
+<!-- <template>
   <router-link to="/parent">Parent Component</router-link>
   <router-view></router-view>
 </template>
@@ -240,4 +240,15 @@ import ParentComponent from './ParentComponent.vue';
 <script setup>
 
 
+</script> -->
+
+<script setup>
+import Header from './components/Header.vue';
+
+  
+
 </script>
+
+<template>
+  <Header/>
+</template>
